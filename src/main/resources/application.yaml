@@ -1,0 +1,15 @@
+spring:
+  security:
+    user:
+      name: admin
+      password: 11asddsa
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ssb
+    username: pgadmin
+    password: 11asddsa
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
