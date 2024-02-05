@@ -25,12 +25,12 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody CustomerDTO customerDTO) {
         Customer customer = customerMapper.customerDTOToCustomer(customerDTO);
-        ResponseEntity responseEntity;
+        ResponseEntity<String> responseEntity;
 
         try {
             customer.setPwd(passwordEncoder.encode(customerDTO.getPwd()));
             Customer savedCustomer = customerRepository.save(customer);
-            if(savedCustomer.getId() > 0) {
+            if(savedCustomer.getCustomerId() > 0) {
                 responseEntity = ResponseEntity
                         .status(HttpStatus.CREATED)
                         .body("Given user details are successfully registered");

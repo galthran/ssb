@@ -1,6 +1,5 @@
 package net.jarosinski.ssb.controller.dto;
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,19 +9,21 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CustomerDTO {
+public class LoanDTO {
+
+    private Long loanId;
 
     private Long customerId;
 
-    private String name;
+    private LocalDate startDt;
 
-    private String email;
+    private String loanType;
 
-    private String mobileNumber;
+    private Integer totalLoan;
 
-    private String pwd;
+    private Integer amountPaid;
 
-    private String role;
+    private Integer outstandingAmount;
 
     private LocalDate createDt;
 }

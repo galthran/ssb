@@ -1,6 +1,7 @@
 package net.jarosinski.ssb.controller.dto;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,21 +9,19 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class CustomerDTO {
+@NoArgsConstructor
+public class ContactMessageDTO {
 
-    private Long customerId;
+    private String contactId;
 
-    private String name;
+    private String contactName;
 
-    private String email;
+    private String contactEmail;
 
-    private String mobileNumber;
+    private String subject;
 
-    private String pwd;
-
-    private String role;
+    private String message;
 
     private LocalDate createDt;
 }
