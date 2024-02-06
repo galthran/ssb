@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
+
 @RestController
 @RequiredArgsConstructor
 public class UserController {
@@ -29,6 +31,7 @@ public class UserController {
 
         try {
             customer.setPwd(passwordEncoder.encode(customerDTO.getPwd()));
+            customer.setCreateDt(LocalDate.now());
             Customer savedCustomer = customerRepository.save(customer);
             if(savedCustomer.getCustomerId() > 0) {
                 responseEntity = ResponseEntity
